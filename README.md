@@ -2,6 +2,9 @@
 
 ![image](https://github.com/Yura-Qu/A-B-Testing-in-R/assets/143141778/3290d36a-46fa-49d2-b2d7-58e451c2f954)
 
+Summary: ![B Testing ](https://github.com/Yura-Qu/A-B-Testing-in-R/assets/143141778/734e2fa0-fc81-4be0-8e1d-05a5b07b49ac)
+
+
 ## Introduction 
 AB testing is a statistical technique to make data-driven decisions by testing differences and relationships of data collected in a controlled AB design experiment.
 
@@ -86,6 +89,14 @@ AB testing is a statistical technique to make data-driven decisions by testing d
      >  The probability of no false positives per test is (1 - α) = 0.95.
      > 
      >  To find the chance of no false positives across all ten tests, raise 0.95 to the power of 10: $(0.95^{10}) = 0.60$. Subtract this from 1 to get the probability of encountering one or more false positives, which is around 0.40 or 40%.
+     > ```r
+     > 1-((1-0.05)^10)
+     > [1] 0.4012631
+     > 1-((1-0.05)^100)
+     > [1] 0.9940795
+     > ```
+     > - If we run 10 tests, the probability of having at least 1 false-positive = 40%
+     > - If we run 100 tests, the probability of having at least 1 false-positive = 99%
      [^2]:Type I error refers to a statistical error that occurs when a null hypothesis is incorrectly rejected. In hypothesis testing, it signifies the rejection of a true null hypothesis, indicating an effect or relationship when there isn't one in reality. This error is associated with the significance level (often denoted as alpha), typically set at 5% or 0.05 in many statistical analyses.
 3. **Regression to the mean**
    Regression to the mean refers to an observation that extreme initial measurements of a variable tend to move closer to the average upon subsequent measurements.
